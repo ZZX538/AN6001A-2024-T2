@@ -1,6 +1,3 @@
-#
-#Syn code spaces is very high risk, sometimes fail
-
 from flask import Flask,request,render_template
 
 app = Flask(__name__)
