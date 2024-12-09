@@ -1,10 +1,10 @@
 from flask import Flask,request,render_template
 import textblob
 import os 
-api = os.getenv("makersuite")
 import google.generativeai as genai
 
-genai.configure(api_key=api)
+api = os.getenv("makersuite")
+genai.configure(api_key="AIzaSyAQllkJLgSI5BhQM6voEgLdeTix9Pv99OE")
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 
@@ -32,7 +32,7 @@ def SA_result():
     r=textblob.TextBlob(q).sentiment
     return(render_template("SA_result.html",r=r))
 
-#-----------------------------------------
+
 @app.route("/genAI",methods=["GET","POST"])
 def genAI():
     return(render_template("genAI.html"))
